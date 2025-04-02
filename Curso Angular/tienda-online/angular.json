@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "primer_proyecto": {
+    "tienda-online": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/primer_proyecto",
+            "outputPath": "dist/tienda-online",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "primer_proyecto:build:production"
+              "buildTarget": "tienda-online:build:production"
             },
             "development": {
-              "buildTarget": "primer_proyecto:build:development"
+              "buildTarget": "tienda-online:build:development"
             }
           },
           "defaultConfiguration": "development"

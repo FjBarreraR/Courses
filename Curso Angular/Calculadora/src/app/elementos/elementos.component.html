@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center ">
+    <div class="w-50">
+        <div class="mb-3">
+            <label for="inputNumero" class="mx-2">Operando A</label>
+            <input id="inputNumero" type="text" [(ngModel)]="operandoA">
+        </div>
+        <div class="mb-3">
+            <label for="inputNumero" class="mx-2">Operando B</label>
+            <input id="inputNumero" type="text" [(ngModel)]="operandoB">
+        </div>
+        <button class="btn btn-primary w-25" (click)="sumar()">
+            Sumar
+        </button>
+        <div class="mt-3">
+            <p>Resultado: {{resultado}}</p>
+        </div>
+    </div>
+</div>
