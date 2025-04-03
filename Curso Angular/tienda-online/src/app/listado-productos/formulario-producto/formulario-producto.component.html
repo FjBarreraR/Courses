@@ -1,0 +1,14 @@
+<h3 class="text-center text-success mt-3">Agregar Nuevo Producto</h3>
+    <div class="d-flex w-50 mx-auto">
+        <div class="mt-3 w-75">
+            <input type="any" name="descripcion" [(ngModel)]="newProducto.descripcion" class="form-control" placeholder="Descripcion Producto"/>
+        </div>
+        <div class="mt-3 w-25">
+            <input type="any" name="precio" [(ngModel)]="newProducto.precio" class="form-control" placeholder="Precio"/>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary" (click)="agregarProducto()">
+                Agregar
+            </button>
+        </div>
+    </div>

@@ -1,4 +1,10 @@
-<section>
-    <p class="text-center">Descripción: {{producto.descripcion}}, Precio: ${{producto.precio}}</p>
-</section>
+<div class="container mt-5 justify-content-center">
+    <ul class="list-group w-50 mx-auto">
+        @for (producto of productos; track producto) {
+            <li class="list-group-item text center">
+                {{producto.descripcion}}, ${{producto.precio}}
+            </li>
+        }
+    </ul>
+</div>
 
