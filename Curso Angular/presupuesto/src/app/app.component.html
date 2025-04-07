@@ -1,9 +1,17 @@
 <div class="container my-5">
-  <app-cabecera/>
+  <app-cabecera 
+  [presupuestoTotal]="getPresupuestoTotal()"
+  [ingresoTotal]="getIngresoTotal()"
+  [egresoTotal]="getEgresoTotal()"
+  [porcentajeTotal]="getPorcentajeTotal()"/>
   <app-formulario/>
   <div class="row mt-4">
-    <app-ingresos/>
-    <app-egresos/>
+    <div class="col-md-6">
+      <app-ingresos/>
+    </div>
+    <div class="col-md-6">
+      <app-egresos [ingresoTotal]="getIngresoTotal()"/>
+    </div>
   </div>
 </div>
 

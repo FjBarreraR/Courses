@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Ingreso } from './ingreso.model';
+import { IngresoService } from './ingreso.service';
 
 @Component({
   selector: 'app-ingresos',
@@ -8,16 +10,13 @@ import { Component } from '@angular/core';
   styleUrl: './ingresos.component.css'
 })
 export class IngresosComponent {
-  ingresos: any = [
-    {descripcion: 'Salario', valor: 4000},
-    {descripcion: 'Venta coche', valor: 500}
-  ]
+  ingresos: Ingreso[]=[];
 
-  total: number = 0.00;
+  constructor(private ingresoServicio: IngresoService){
+    this.ingresos = this.ingresoServicio.ingresos;
+  }
 
-  totalIngresos(ingresos: any){
-    for (let index = 0; index <= ingresos.length; index++) {
-      this.total += this.ingresos[index].valor
-    }
+  eliminarRegistro(ingreso: Ingreso){
+    this.ingresoServicio.eliminar(ingreso);
   }
 }

@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Egreso } from './egreso.model';
+import { EgresoService } from './egreso.service';
 
 @Component({
   selector: 'app-egresos',
@@ -8,16 +10,18 @@ import { Component } from '@angular/core';
   styleUrl: './egresos.component.css'
 })
 export class EgresosComponent {
-  egresos: any = [
-    {descripcion: 'Renta Depto', valor: 900},
-    {descripcion: 'Ropa', valor: 200}
-  ]
+  egresos: Egreso[] = [];
+  @Input() ingresoTotal !: number;
 
-  total: number = 0.00;
+  constructor(private egresoServicio: EgresoService){
+    this.egresos = this.egresoServicio.egresos;
+  }
 
-  totalIngresos(ingresos: any){
-    for (let index = 0; index <= this.egresos.length; index++) {
-      this.total -= this.egresos[index].valor;
-    }
+  eliminarEgreso(egreso: Egreso){
+    this.egresoServicio.eliminar(egreso);
+  }
+
+  calcularPorcentaje(egreso: Egreso){
+    return egreso.valor/this.ingresoTotal;
   }
 }

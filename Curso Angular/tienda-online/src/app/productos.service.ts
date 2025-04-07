@@ -21,9 +21,7 @@ export class ProductosService {
 
   detalleProductoEmitter = new EventEmitter<any>();
 
-  
-
-  constructor() { }
+  constructor() {}
 
   obtenerListadoProductos(): any {
     return this.productos;

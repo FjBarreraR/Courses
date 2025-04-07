@@ -17,12 +17,13 @@ import { ListadoUsuariosComponent } from "./listado-usuarios/listado-usuarios.co
 import { EjemploPipesComponent } from "./ejemplo-pipes/ejemplo-pipes.component";
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es'
+import { NavegacionComponent } from "./navegacion/navegacion.component";
 
 registerLocaleData(localeEs, 'es')
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NuevoComponenteComponent, ComponenteEnLineaComponent, InterpolacionComponent, PadreComponent, HijoComponent, MostrarComponenteComponent, ReplicadorComponent, SaludarComponent, ProyectoIfComponent, AgregarTareaComponent, DirectivaForComponent, ViewchildComponent, ListadoUsuariosComponent, EjemploPipesComponent],
+  imports: [RouterOutlet, NuevoComponenteComponent, ComponenteEnLineaComponent, InterpolacionComponent, PadreComponent, HijoComponent, MostrarComponenteComponent, ReplicadorComponent, SaludarComponent, ProyectoIfComponent, AgregarTareaComponent, DirectivaForComponent, ViewchildComponent, ListadoUsuariosComponent, EjemploPipesComponent, NavegacionComponent],
   providers: [{provide: LOCALE_ID, useValue: 'es'}],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

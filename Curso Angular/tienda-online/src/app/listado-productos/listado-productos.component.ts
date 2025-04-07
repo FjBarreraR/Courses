@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductosComponent } from "./productos/productos.component";
 import { FormularioProductoComponent } from "./formulario-producto/formulario-producto.component";
 import { ProductosService } from '../productos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-productos',
@@ -18,11 +19,15 @@ export class ListadoProductosComponent {
     this.productos.push(nuevProd);
   }
 
-  constructor(private ps: ProductosService){
+  constructor(private ps: ProductosService, private router: Router){
     
   }
 
   ngOnInit(){
     this.productos = this.ps.obtenerListadoProductos();
+  }
+
+  agregarProducto(){
+    this.router.navigate(['agregar'])
   }
 }
